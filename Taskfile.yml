@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  gen2:
+    cmds:
+      - go generate ./... 
+  gen3:
+    cmds:
+      - go generate -tags=asyncapi3 ./... 
+  diff:
+    cmds:
+      - code --diff asyncapi.2.yaml asyncapi.3.yaml
+  tools:
+    cmds:
+      - open "https://www.asyncapi.com/tools?langs=Go%2FGolang"
